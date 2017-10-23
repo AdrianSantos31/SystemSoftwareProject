@@ -37,7 +37,7 @@ import java.util.*;
 public class SicXeAssm{
   public static void main(String[] args) throws FileNotFoundException{
 
-    //Scanner
+    //Reads the File from the command Line argument
     File file = new File (args[0]);
     Scanner input = new Scanner (file);
 
