@@ -11,7 +11,7 @@ Instructions
 1  What is required?
   DONE - 1. You must submit exactly one source file SicXeAssm.java.
   DONE - 2. Include the names of the group members at the top of the program file.
-  3. The program must accept the name of the input source file as a command-line argument. It must report an error message if the file is not found.
+  DONE - 3. The program must accept the name of the input source file as a command-line argument. It must report an error message if the file is not found.
   4. The program must work accurately with PC relative and base relative modes. Clearly, you need to implement the BASE directive in your program. Also take care about various instruction formats.
   5. There must be two methods named passOne and passTwo which does their respective tasks. Feel free to use as many auxiliary methods as you wish.
   6. The program must be able to handle any number of whitespaces or tabs inthe input source code.
@@ -41,6 +41,7 @@ public class SicXeAssm{
     File file = new File (args[0]);
     Scanner input = new Scanner (file);
 
+    //Reads all the input file
     while(input.hasNextLine()){
       String line = input.nextLine();
       System.out.println(line);
