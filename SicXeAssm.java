@@ -54,8 +54,5 @@ public class SicXeAssm{
       catch(FileNotFoundException exception){
             System.out.println("The file " + file.getPath() + " was not found.");
       }
-      catch(IOException exception){
-            System.out.println(exception);
-      }
   }
 }
