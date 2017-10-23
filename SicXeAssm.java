@@ -52,7 +52,7 @@ public class SicXeAssm{
         input.close();
       }
       catch(FileNotFoundException exception){
-            System.out.println("The file " + file.getPath() + " was not found.");
+            System.out.println("The file \" "  + file.getPath() + " \" was not found.");
       }
   }
 }
