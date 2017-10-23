@@ -37,6 +37,9 @@ import java.util.*;
 public class SicXeAssm{
   public static void main(String[] args){
 
+
+    System.out.println("testing");
+
       //Reads the File from the command Line argument
       File file = new File (args[0]);
       try{
