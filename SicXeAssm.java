@@ -42,7 +42,13 @@ public class SicXeAssm{
     File file = new File (args[0]);
     Scanner input = new Scanner (file);
 
+    while(input.hasNextLine()){
+      String line = input.nextLine();
+      System.out.println(line);
+    }
 
+    //Closes the input
+    input.close();
 
   }
 }
