@@ -48,6 +48,10 @@ public class SicXeAssm{
           System.out.println(line);
         }
 
+        //Test the Methods
+        passOne();
+        passTwo();
+
         //Closes the input
         input.close();
       }
@@ -57,10 +61,10 @@ public class SicXeAssm{
   }
 
   public static void passOne(){
-
+    System.out.println("Testing passOne");
   }
 
   public static void passTwo(){
-
+    System.out.println("Testing passTwo");
   }
 }
