@@ -55,4 +55,12 @@ public class SicXeAssm{
             System.out.println("The file \""  + file.getPath() + "\" was not found.");
       }
   }
+
+  public static void passOne(){
+
+  }
+
+  public static void passTwo(){
+
+  }
 }
