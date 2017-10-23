@@ -35,20 +35,27 @@ import java.lang.*;
 import java.util.*;
 
 public class SicXeAssm{
-  public static void main(String[] args) throws FileNotFoundException{
+  public static void main(String[] args){
 
-    //Reads the File from the command Line argument
-    File file = new File (args[0]);
-    Scanner input = new Scanner (file);
+      //Reads the File from the command Line argument
+      File file = new File (args[0]);
+      try{
+        Scanner input = new Scanner (file);
 
-    //Reads all the input file
-    while(input.hasNextLine()){
-      String line = input.nextLine();
-      System.out.println(line);
-    }
+        //Reads all the input file
+        while(input.hasNextLine()){
+          String line = input.nextLine();
+          System.out.println(line);
+        }
 
-    //Closes the input
-    input.close();
-
+        //Closes the input
+        input.close();
+      }
+      catch(FileNotFoundException exception){
+            System.out.println("The file " + file.getPath() + " was not found.");
+      }
+      catch(IOException exception){
+            System.out.println(exception);
+      }
   }
 }
