@@ -51,10 +51,8 @@ public class SicXeAssm{
         //Reads all the input file
         while(input.hasNextLine()){
           String line = input.nextLine();
-          if(line != "\n"){
-            stringArrList.add(line);
-            System.out.println(line);
-          }
+          stringArrList.add(line);
+          System.out.println(line);
         }
 
         //Get the Array List Information
