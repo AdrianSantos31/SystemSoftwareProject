@@ -73,16 +73,17 @@ public class SicXeAssm{
       catch(FileNotFoundException exception){
             System.out.println("The file \""  + file.getPath() + "\" was not found.");
       }
-  }
+  }//end main method
 
 
   //passOne
   public static void passOne(){
     System.out.println("Testing passOne");
-  }
+  }//end passOne
 
   //passTwo
   public static void passTwo(){
     System.out.println("Testing passTwo");
-  }
-}
+  }//end passTwo
+  
+}//end SicXeAssm.java
