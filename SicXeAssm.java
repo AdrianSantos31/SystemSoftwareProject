@@ -36,14 +36,6 @@ import java.util.*;
 
 public class SicXeAssm{
   public static void main(String[] args){
-    //THis is the latest code
-    System.out.println("testing");
-//this is ahmeds branch
-
-
-
-    //This is Adrian Santos Branch
-
       //Reads the File from the command Line argument
       File file = new File (args[0]);
 
@@ -85,5 +77,5 @@ public class SicXeAssm{
   public static void passTwo(){
     System.out.println("Testing passTwo");
   }//end passTwo
-  
+
 }//end SicXeAssm.java
