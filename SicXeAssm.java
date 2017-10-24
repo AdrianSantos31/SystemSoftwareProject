@@ -46,6 +46,10 @@ public class SicXeAssm{
 
       //Reads the File from the command Line argument
       File file = new File (args[0]);
+
+      //Write the File
+      PrintWriter writeFile = new PrintWriter(System.out);
+
       try{
         Scanner input = new Scanner (file);
 
@@ -61,6 +65,8 @@ public class SicXeAssm{
 
         //Closes the input
         input.close();
+        //Closes the output
+        writeFile.close();
       }
       catch(FileNotFoundException exception){
             System.out.println("The file \""  + file.getPath() + "\" was not found.");
