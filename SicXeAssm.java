@@ -68,6 +68,8 @@ public class SicXeAssm{
         //Closes the output
         writeFile.close();
       }
+
+      //Prints an error if the file is not found / is wrong
       catch(FileNotFoundException exception){
             System.out.println("The file \""  + file.getPath() + "\" was not found.");
       }
