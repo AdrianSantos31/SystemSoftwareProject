@@ -57,6 +57,8 @@ public class SicXeAssm{
           }
         }
 
+        // this is only a test
+
         //Get the Array List Information
         System.out.println(stringArrList.size());
 
