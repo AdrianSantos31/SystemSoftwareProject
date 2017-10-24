@@ -37,6 +37,9 @@ import java.util.*;
 public class SicXeAssm{
   public static void main(String[] args){
 
+
+    System.out.println("testing");
+
       //Reads the File from the command Line argument
       File file = new File (args[0]);
       try{
@@ -48,11 +51,23 @@ public class SicXeAssm{
           System.out.println(line);
         }
 
+        //Test the Methods
+        passOne();
+        passTwo();
+
         //Closes the input
         input.close();
       }
       catch(FileNotFoundException exception){
             System.out.println("The file \""  + file.getPath() + "\" was not found.");
       }
+  }
+
+  public static void passOne(){
+    System.out.println("Testing passOne");
+  }
+
+  public static void passTwo(){
+    System.out.println("Testing passTwo");
   }
 }
