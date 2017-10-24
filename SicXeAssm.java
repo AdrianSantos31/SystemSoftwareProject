@@ -43,7 +43,7 @@ public class SicXeAssm{
       PrintWriter writeFile = new PrintWriter(System.out);
 
       //ArrayList Implementation
-      ArrayList arrList = new ArrayList();
+      ArrayList<> stringArrList = new ArrayList<String>();
 
       try{
         Scanner input = new Scanner (file);
@@ -51,7 +51,7 @@ public class SicXeAssm{
         //Reads all the input file
         while(input.hasNextLine()){
           String line = input.nextLine();
-          arrList.add(line);
+          stringArrList.add(line);
           System.out.println(line);
         }
 
@@ -60,7 +60,7 @@ public class SicXeAssm{
         passTwo();
 
         //Get the Array List Information
-        System.out.println(arrList.size());
+        System.out.println(stringArrList.size());
 
         //Closes the input
         input.close();
