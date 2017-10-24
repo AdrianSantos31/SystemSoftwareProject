@@ -1,7 +1,7 @@
 /*
 This is the project for System Software.
 Members:
-Sotiri Kolvani
+Sotiri Kolvani - N00845431
 Adrian Santos - N00798593
 Ahmed Sehic
 
