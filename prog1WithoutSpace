@@ -1,0 +1,9 @@
+SQUARING     START 100
+VAR-B        WORD 1
+	    			 LDA VAR-A
+             ADD VAR-B
+             STA A-PLUS-B
+	     			 LDA A-PLUS-B
+             MUL A-PLUS-B
+A-PLUS-B     RESW 1
+             END SQUARING
