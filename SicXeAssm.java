@@ -75,10 +75,13 @@ public class SicXeAssm{
       }
   }
 
+
+  //passOne
   public static void passOne(){
     System.out.println("Testing passOne");
   }
 
+  //passTwo
   public static void passTwo(){
     System.out.println("Testing passTwo");
   }
