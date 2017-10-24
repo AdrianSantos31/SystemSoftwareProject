@@ -46,13 +46,15 @@ public class SicXeAssm{
       ArrayList<String> stringArrList = new ArrayList<String>();
 
       try{
-        Scanner input = new Scanner (file);
+        Scanner input = new Scanner(file);
 
         //Reads all the input file
         while(input.hasNextLine()){
           String line = input.nextLine();
-          stringArrList.add(line);
-          System.out.println(line);
+          if(!line.isEmpty()){
+            stringArrList.add(line);
+            System.out.println(line);
+          }
         }
 
         //Get the Array List Information
@@ -72,6 +74,7 @@ public class SicXeAssm{
       catch(FileNotFoundException exception){
             System.out.println("The file \""  + file.getPath() + "\" was not found.");
       }
+
   }//end main method
 
 
