@@ -11,4 +11,4 @@ VAR-B        WORD 1
 
 A-PLUS-B     RESW 1
 
-             END SQUARING   
+             END SQUARING
