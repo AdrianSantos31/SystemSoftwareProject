@@ -51,12 +51,16 @@ public class SicXeAssm{
         //Reads all the input file
         while(input.hasNextLine()){
           String line = input.nextLine();
+          arrList.add(line);
           System.out.println(line);
         }
 
         //Test the Methods
         passOne();
         passTwo();
+
+        //Get the Array List Information
+        System.out.println(arrList.size());
 
         //Closes the input
         input.close();
