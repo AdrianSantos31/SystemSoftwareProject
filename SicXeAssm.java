@@ -51,13 +51,11 @@ public class SicXeAssm{
         //Reads all the input file
         while(input.hasNextLine()){
           String line = input.nextLine();
-          stringArrList.add(line);
-          System.out.println(line);
+          if(line != ""){
+            stringArrList.add(line);
+            System.out.println(line);
+          }
         }
-
-        //Test the Methods
-        passOne();
-        passTwo();
 
         //Get the Array List Information
         System.out.println(stringArrList.size());
@@ -66,6 +64,10 @@ public class SicXeAssm{
         input.close();
         //Closes the output
         writeFile.close();
+
+        //Test the Methods
+        passOne();
+        passTwo();
       }
 
       //Prints an error if the file is not found / is wrong
