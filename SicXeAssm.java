@@ -43,7 +43,7 @@ public class SicXeAssm{
       PrintWriter writeFile = new PrintWriter(System.out);
 
       //ArrayList Implementation
-      ArrayList<> stringArrList = new ArrayList<String>();
+      ArrayList<String> stringArrList = new ArrayList<String>();
 
       try{
         Scanner input = new Scanner (file);
