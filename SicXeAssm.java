@@ -37,10 +37,11 @@ import java.util.*;
 public class SicXeAssm{
   public static void main(String[] args){
       //Reads the File from the command Line argument
-      File file = new File (args[0]);
+      File inputFile = new File (args[0]);
 
-      //Write the File
-      PrintWriter writeFile = new PrintWriter(System.out);
+      //Create a file
+      File output1 = new File();//lst file
+      File output2 = new File();// obj file
 
       //ArrayList Implementation
       ArrayList<String> stringArrList = new ArrayList<String>();
@@ -49,7 +50,7 @@ public class SicXeAssm{
         Scanner input = new Scanner(file);
 
         //Reads all the input file
-        while(input.hasNextLine()){
+        while(inputFile.hasNextLine()){
           String line = input.nextLine();
           if(!line.isEmpty()){
             stringArrList.add(line);
@@ -57,15 +58,11 @@ public class SicXeAssm{
           }
         }
 
-        // this is only a test
-
         //Get the Array List Information
         System.out.println(stringArrList.size());
 
         //Closes the input
-        input.close();
-        //Closes the output
-        writeFile.close();
+        inputFile.close();
 
         //Test the Methods
         passOne();
