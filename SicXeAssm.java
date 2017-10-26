@@ -58,6 +58,8 @@ public class SicXeAssm{
       System.out.println("The array list size is: " + stringArrList.size());
 
       //Hashmap Implementations
+      HashMap<String, Integer> OPTAB = new HashMap<String, Integer>();
+      HashMap<String, Integer> SYMTAB = new HashMap<String, Integer>();
 
       /*
 
