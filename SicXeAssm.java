@@ -35,26 +35,13 @@ import java.lang.*;
 import java.util.*;
 
 public class SicXeAssm{
-  public static void main(String[] args) throws FileNotFoundException{
+  public static void main(String[] args) throws FileNotFoundException, IOException{
+
       //File Class -  get the file using the command line argument
       File inputFile = new File (args[0]);
 
       //Reads the file - reads the file
-      Scanner input = new Scanner(file);
-
-      //File class - Create a file
-      File outputFile1 = new File("test.lst");//lst file
-      File outputFile2 = new File("test.obj");// obj file
-
-      //PrintWriter class - to write on the created file
-      PrintWriter output1 = new PrintWriter(outputFile1);
-      PrintWriter output2 = new PrintWriter(outputFile2);
-
-      //Check if files are already existing
-      if(outputFile1.exists() && outputFile2.exists()){
-        System.out.println("Files already exist");
-        System.exit(1);
-      }
+      Scanner input = new Scanner(inputFile);
 
       //ArrayList Implementation
       ArrayList<String> stringArrList = new ArrayList<String>();
@@ -63,48 +50,44 @@ public class SicXeAssm{
           String line = input.nextLine();
           if(!line.isEmpty()){
             stringArrList.add(line);
-            System.out.println(line);
+            System.out.println(line);//Test the input file
           }
       }
 
       //Get the Array List Information
-      System.out.println(stringArrList.size());
+      System.out.println("The array list size is: " + stringArrList.size());
+
+      /*
+
+      This part is already working, enable after codes are working
+
+        //File class - Create a file
+        File outputFile1 = new File("test.lst");//lst file
+        File outputFile2 = new File("test.obj");// obj file
+
+        //Check if files are already existing
+        if(outputFile1.exists() && outputFile2.exists()){
+          System.out.println("The file is already done");
+          System.exit(1);
+        }
+
+        try(
+        //PrintWriter class - to write on the created file
+        PrintWriter output1 = new PrintWriter(outputFile1);
+        PrintWriter output2 = new PrintWriter(outputFile2);
+        ){
+        output1.println("Hello");
+        output1.println("testing the file output");
+        }
+
+
+      */
 
       //Closes the input
-      inputFile.close();
+      input.close();
 
-      // try{
-      //   Scanner input = new Scanner(file);
-      //
-      //   //Reads all the input file
-      //   while(inputFile.hasNextLine()){
-      //     String line = input.nextLine();
-      //     if(!line.isEmpty()){
-      //       stringArrList.add(line);
-      //       System.out.println(line);
-      //     }
-      //   }
-      //
-      //   //Get the Array List Information
-      //   System.out.println(stringArrList.size());
-      //
-      //   //Closes the input
-      //   inputFile.close();
-      //
-      //   //Test the Methods
-      //   passOne();
-      //   passTwo();
-      //
-      //   try(output1){
-      //     output1.println("Test");
-      //   }
-      // }
-      //
-      //
-      // //Prints an error if the file is not found / is wrong
-      // catch(FileNotFoundException exception){
-      //       System.out.println("The file \""  + file.getPath() + "\" was not found.");
-      // }
+      passOne();
+      passTwo();
 
   }//end main method
 
@@ -120,3 +103,79 @@ public class SicXeAssm{
   }//end passTwo
 
 }//end SicXeAssm.java
+
+public class OPTAB{
+  public static void main(String[] args){
+
+
+  }
+
+  
+
+
+}
+
+//Implemented Solutions - Keep for later possible use
+  /*
+
+  This part is already working, enable after codes are working
+
+    //File class - Create a file
+    File outputFile1 = new File("test.lst");//lst file
+    File outputFile2 = new File("test.obj");// obj file
+
+    //Check if files are already existing
+    if(outputFile1.exists() && outputFile2.exists()){
+      System.out.println("Files already exist");
+      System.exit(1);
+    }
+
+    try(
+    //PrintWriter class - to write on the created file
+    PrintWriter output1 = new PrintWriter(outputFile1);
+    PrintWriter output2 = new PrintWriter(outputFile2);
+    ){
+    output1.println("Hello");
+    output1.println("testing the file output");
+    }
+
+
+  */
+
+  /*
+
+  Alternative method for file input
+
+  try{
+    Scanner input = new Scanner(file);
+
+    //Reads all the input file
+    while(inputFile.hasNextLine()){
+      String line = input.nextLine();
+      if(!line.isEmpty()){
+        stringArrList.add(line);
+        System.out.println(line);
+      }
+    }
+
+    //Get the Array List Information
+    System.out.println(stringArrList.size());
+
+    //Closes the input
+    inputFile.close();
+
+    //Test the Methods
+    passOne();
+    passTwo();
+
+    try(output1){
+      output1.println("Test");
+    }
+  }
+
+
+  //Prints an error if the file is not found / is wrong
+  catch(FileNotFoundException exception){
+        System.out.println("The file \""  + file.getPath() + "\" was not found.");
+  }
+  */
