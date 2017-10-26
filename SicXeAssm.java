@@ -57,6 +57,8 @@ public class SicXeAssm{
       //Get the Array List Information - TEST ONLY
       System.out.println("The array list size is: " + stringArrList.size());
 
+      //Hashmap Implementations
+
       /*
 
       This part is already working, enable after codes are working
@@ -102,18 +104,10 @@ public class SicXeAssm{
     System.out.println("Testing passTwo");
   }//end passTwo
 
+
+
+
 }//end SicXeAssm.java
-
-public class OPTAB{
-  public static void main(String[] args){
-
-
-  }
-
-
-
-
-}
 
 //Implemented Solutions - Keep for later possible use
   /*
