@@ -50,11 +50,11 @@ public class SicXeAssm{
           String line = input.nextLine();
           if(!line.isEmpty()){
             stringArrList.add(line);
-            System.out.println(line);//Test the input file
+            System.out.println(line);//Test the input file - TEST ONLY
           }
       }
 
-      //Get the Array List Information
+      //Get the Array List Information - TEST ONLY
       System.out.println("The array list size is: " + stringArrList.size());
 
       /*
@@ -86,8 +86,8 @@ public class SicXeAssm{
       //Closes the input
       input.close();
 
-      passOne();
-      passTwo();
+      passOne();// - TEST ONLY
+      passTwo();// - TEST ONLY
 
   }//end main method
 
@@ -110,7 +110,7 @@ public class OPTAB{
 
   }
 
-  
+
 
 
 }
