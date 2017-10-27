@@ -61,16 +61,19 @@ public class SicXeAssm{
             String[] strArray = line.split("\\s+");
 
             for(int i = 0; i < strArray.length; i++){
-              // if(strArray[0].equals("")){
-              //   strArray.splice(0,1);
-              // }else{
-                System.out.println(i + " - "+ strArray[i]);
-              //}
+
+              /*
+                Use this in order to access the empty element
+                  if(strArray[0].equals("")){
+                    strArray.clear();
+                  }else{
+                  //Statement
+                  }
+              */
+                System.out.println("[" + i + "] : "+ strArray[i]);
+
             }
-
-
             System.out.println("- - - - - \t - - - - - \t   E N D   \t - - - - - \t - - - - - ");//Test the input file - TEST ONLY
-            //stringArrList.add(line);
             stringArrList.add(line);
 
           }
