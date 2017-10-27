@@ -45,21 +45,44 @@ public class SicXeAssm{
 
       //ArrayList Implementation
       ArrayList<String> stringArrList = new ArrayList<String>();
+      ArrayList<String> emptyStringArrList = new ArrayList<String>();
+
+      //Hashmap Implementations
+      HashMap<String, String> TEST = new HashMap<String, String>();
+      HashMap<String, Integer> OPTAB = new HashMap<String, Integer>();
+      HashMap<String, Integer> SYMTAB = new HashMap<String, Integer>();
 
       while(input.hasNext()){
           String line = input.nextLine();
+
+          System.out.println(line);//Test the input file - TEST ONLY
+
           if(!line.isEmpty()){
+            String[] strArray = line.split("\\s+");
+
+            for(int i = 0; i < strArray.length; i++){
+              // if(strArray[0].equals("")){
+              //   strArray.splice(0,1);
+              // }else{
+                System.out.println(i + " - "+ strArray[i]);
+              //}
+            }
+
+
+            System.out.println("- - - - - \t - - - - - \t   E N D   \t - - - - - \t - - - - - ");//Test the input file - TEST ONLY
+            //stringArrList.add(line);
             stringArrList.add(line);
-            System.out.println(line);//Test the input file - TEST ONLY
+
           }
+
+
       }
 
+      System.out.println("");//Test the input file - TEST ONLY
       //Get the Array List Information - TEST ONLY
       System.out.println("The array list size is: " + stringArrList.size());
 
-      //Hashmap Implementations
-      HashMap<String, Integer> OPTAB = new HashMap<String, Integer>();
-      HashMap<String, Integer> SYMTAB = new HashMap<String, Integer>();
+
 
       /*
 
