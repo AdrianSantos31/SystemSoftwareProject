@@ -70,7 +70,7 @@ public class SicXeAssm{
                   //Statement
                   }
               */
-                System.out.println("[" + i + "] : "+ strArray[i]);
+                System.out.println("[" + i + "] : "+ strArray[i]);//Test the input file - TEST ONLY
 
             }
             System.out.println("- - - - - \t - - - - - \t   E N D   \t - - - - - \t - - - - - ");//Test the input file - TEST ONLY
