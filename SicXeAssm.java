@@ -70,8 +70,10 @@ public class SicXeAssm{
                   //Statement
                   }
               */
-                System.out.println("[" + i + "] : "+ strArray[i]);//Test the input file - TEST ONLY
 
+              if(!strArray[0].contains(".")){
+                System.out.println("[" + i + "] : "+ strArray[i]);//Test the input file - TEST ONLY
+              }
             }
             System.out.println("- - - - - \t - - - - - \t   E N D   \t - - - - - \t - - - - - ");//Test the input file - TEST ONLY
             stringArrList.add(line);
@@ -137,6 +139,11 @@ public class SicXeAssm{
 
 }//end SicXeAssm.java
 
+class Global{
+
+
+
+}
 
 
 //Implemented Solutions - Keep for later possible use
