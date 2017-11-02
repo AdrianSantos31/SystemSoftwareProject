@@ -49,7 +49,7 @@ public class SicXeAssm{
 
       //Hashmap Implementations
       HashMap<String, String> TEST = new HashMap<String, String>();
-      HashMap<String, Integer> OPTAB = new HashMap<String, Integer>();
+      //HashMap<String, Integer> OPTAB = new HashMap<String, Integer>();
       HashMap<String, Integer> SYMTAB = new HashMap<String, Integer>();
 
       while(input.hasNext()){
@@ -57,7 +57,7 @@ public class SicXeAssm{
 
           System.out.println(line);//Test the input file - TEST ONLY
 
-          if(!line.isEmpty()){
+          if(!line.isEmpty() || !line.contains(".")){
             String[] strArray = line.split("\\s+");
 
             for(int i = 0; i < strArray.length; i++){
@@ -74,9 +74,14 @@ public class SicXeAssm{
               if(!strArray[0].contains(".")){
                 System.out.println("[" + i + "] : "+ strArray[i]);//Test the input file - TEST ONLY
               }
+
+
             }
             System.out.println("- - - - - \t - - - - - \t   E N D   \t - - - - - \t - - - - - ");//Test the input file - TEST ONLY
-            stringArrList.add(line);
+
+            if(!line.contains(".")){
+              stringArrList.add(line);
+            }
 
           }
 
@@ -85,6 +90,7 @@ public class SicXeAssm{
 
       System.out.println("");//Test the input file - TEST ONLY
       //Get the Array List Information - TEST ONLY
+
       System.out.println("The array list size is: " + stringArrList.size());
 
 
@@ -140,7 +146,7 @@ public class SicXeAssm{
 }//end SicXeAssm.java
 
 class Global{
-
+  HashMap<String, Integer> OPTAB = new HashMap<String, Integer>();
 
 
 }
