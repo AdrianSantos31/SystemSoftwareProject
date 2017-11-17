@@ -62,14 +62,11 @@ public class SicXeAssm{
 
             for(int i = 0; i < strArray.length; i++){
 
-              /*
-                Use this in order to access the empty element
-                  if(strArray[0].equals("")){
-                    strArray.clear();
-                  }else{
-                  //Statement
-                  }
-              */
+              if(!strArray[])
+              {
+                x = 2;
+
+              }
 
               //This statement disregards the commentsw
               if(!strArray[0].contains(".")){
