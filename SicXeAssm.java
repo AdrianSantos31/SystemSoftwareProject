@@ -62,10 +62,9 @@ public class SicXeAssm{
 
             for(int i = 0; i < strArray.length; i++){
 
-              if(!strArray[])
-              {
-                x = 2;
-
+              //This statement disregards the commentsw
+              if(!strArray[0].contains(".")){
+                System.out.println("[" + i + "] : "+ strArray[i]);//Test the input file - TEST ONLY
               }
 
               //This statement disregards the commentsw
