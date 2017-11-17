@@ -39,34 +39,32 @@ public class SicXeAssm{
     //Read the file from command line argument
      File file = new File (args[0]);
 
-     try{
-     //Input from Command Line Argument
-     Scanner input = new Scanner (file);
+       try{
+       //Input from Command Line Argument
+       Scanner input = new Scanner (file);
 
-     //Read all lines
-     while(input.hasNextLine()){
-       String line = input.nextLine();
-       //stringArrList.add(line);
-       System.out.println(line);
-       }
+       //Read all lines
+       while(input.hasNextLine()){
+         String line = input.nextLine();
+         //stringArrList.add(line);
+         System.out.println(line);
+       }//end while
 
-       input.close();
-     }
-
-
-     //Prints an error if the file is not found or is wrong
-     catch(IOException exception){
-           System.out.println("Error reading the file \""  + file.getPath() + "\" ");
-     }
-
-     finally{
+         //Closes the file
+         input.close();
+       }//end try
 
 
-     }
+       //Prints an error if the file is not found or is wrong
+       catch(IOException exception){
+             System.out.println("Error reading the file \""  + file.getPath() + "\" ");
+       }//end catch
 
+       finally{
 
-     }
-}
+       }//end finally
+  }//end main
+}//end SicXeAssm class
 
 /*
 class Global{
