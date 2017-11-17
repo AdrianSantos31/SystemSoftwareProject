@@ -50,6 +50,7 @@ public class SicXeAssm{
        System.out.println(line);
        }
 
+       input.close();
      }
 
 
