@@ -5,7 +5,6 @@ Sotiri Kolvani - N00845431
 Adrian Santos - N00798593
 Ahmed Sehic - n00969861
 
-
 Instructions
 
 1  What is required?
@@ -27,4 +26,65 @@ Instructions
 1. Implementation of theEQU, USE, CSECT directives. In case you do not implement these, your program should report to the user in the.lst file that it cannot handle these with the corresponding line numbers.
 2. You are not required to implement literals, floating point instructions and division instructions. In case you do not implement these, your program should report to the user in the.lstfile that it cannot handle these withthe corresponding line numbers.
 3. Implementation of HIO, LPS, SSK, STI, STSW, SVC, SIO, TIO instructions. In case you do not implement these, your program should report in the.lstfile that it cannot handle these with the corresponding line numbers.
+*/
+
+//Library Imports
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+
+
+public class SicXeAssm{
+  public static void main(String[] args){
+    //Read the file from command line argument
+     File file = new File (args[0]);
+
+     try{
+     //Input from Command Line Argument
+     Scanner input = new Scanner (file);
+
+     //Read all lines
+     while(input.hasNextLine()){
+       String line = input.nextLine();
+       //stringArrList.add(line);
+       System.out.println(line);
+       }
+
+     }
+
+
+     //Prints an error if the file is not found or is wrong
+     catch(IOException exception){
+           System.out.println("Error reading the file \""  + file.getPath() + "\" ");
+     }
+
+     finally{
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+     }
+}
+
+/*
+class Global{
+
+    //Hashmap for the OPTAB
+    public static final Map <String> OPTAB = new HashMap<>();
+
+
+
+}
 */
