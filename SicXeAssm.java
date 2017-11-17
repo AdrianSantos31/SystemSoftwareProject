@@ -71,6 +71,7 @@ public class SicXeAssm{
                   }
               */
 
+              //This statement disregards the commentsw
               if(!strArray[0].contains(".")){
                 System.out.println("[" + i + "] : "+ strArray[i]);//Test the input file - TEST ONLY
               }
@@ -124,12 +125,12 @@ public class SicXeAssm{
       //Closes the input
       input.close();
 
-      passOne();// - TEST ONLY
+      passOne();
       passTwo();// - TEST ONLY
 
   }//end main method
 
-  
+
 
 
   //passOne
