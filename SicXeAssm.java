@@ -37,40 +37,41 @@ import java.lang.*;
 public class SicXeAssm{
   public static void main(String[] args){
     //Read the file from command line argument
-     File file = new File (args[0]);
+    //File file = new File (args[0]);
+
+      BufferedReader br = null;
 
        try{
        //Input from Command Line Argument
-       Scanner input = new Scanner (file);
+       //Scanner input = new Scanner (file);
+       br = new BufferedReader(new FileReader(args[0]));
 
-       //Read all lines
-       while(input.hasNextLine()){
-         String line = input.nextLine();
+       String contentLine = br.readLine();
 
+       while(contentLine != null){
+            if(!contentLine.startsWith(".") || !contentLine.isEmpty()){ //FUTURE WORK: Disregard blank lines
+              System.out.println(contentLine);
+              contentLine = br.readLine();
+            }
+       }
 
-         if(!line.startsWith(".")){ //FUTURE WORK: Disregard blank lines
-           System.out.println(line);
-         }
-
-         else if(input.nextLine()) {
-           string = str.replace("\\s","").trim();
-         } //end if
-
-
-
-       }//end while
-
-         //Closes the file
-         input.close();
        }//end try
 
 
        //Prints an error if the file is not found or is wrong
        catch(IOException exception){
-             System.out.println("Error reading the file \""  + file.getPath() + "\" ");
+           exception.printStackTrace();
+             //System.out.println("Error reading the file \""  + br.getPath() + "\" ");
        }//end catch
 
        finally{
+          try {
+            if (br != null)
+               br.close();
+          }
+          catch (IOException closeException) {
+             System.out.println("Error in closing the BufferedReader");
+          }
 
        }//end finally
   }//end main
@@ -89,79 +90,104 @@ enum Format{
 }
 */
 
+
 class Global{
 
-  public static final Hashtable<String,Integer> OPTABLE = new Hashtable<String,Integer>() {{
-      put("ADD",      0x18);
-      put("ADDF",     0x58);
-      put("ADDR",     0x90);
-      put("AND",      0x40);
-      put("CLEAR",    0xB4);
-      put("COMP",     0x28);
-      put("COMPF",    0x88);
-      put("COMPR",    0xA0);
-      put("DIV",      0x24);
-      put("DIVF",     0x64);
-      put("DIVR",     0x9C);
-      put("FIX",      0xC4);
-      put("FLOAT",    0xC0);
-      put("HIO",      0xF4);
-      put("J",        0x3C);
-      put("JEQ",      0x30);
-      put("JGT",      0x34);
-      put("JLT",      0x38);
-      put("JSUB",     0x48);
-      put("LDA",      0x00);
-      put("LDB",      0x68);
-      put("LDCH",     0x50);
-      put("LDF",      0x70);
-      put("LDL",      0x08);
-      put("LDS",      0x6C);
-      put("LDT",      0x74);
-      put("LDX",      0x04);
-      put("LPS",      0xD0);
-      put("MUL",      0x20);
-      put("MULF",     0x60);
-      put("MULR",     0x98);
-      put("NORM",     0xC8);
-      put("OR",       0x44);
-      put("RD",       0xD8);
-      put("RMO",      0xAC);
-      put("RSUB",     0x4C);
-      put("SHIFTL",   0xA4);
-      put("SHIFTR",   0xA8);
-      put("SIO",      0xF0);
-      put("SSK",      0xEC);
-      put("STA",      0x0C);
-      put("STB",      0x78);
-      put("STCH",     0x54);
-      put("STI",      0xD4);
-      put("STL",      0x14);
-      put("STS",      0x7C);
-      put("STSW",     0xE8);
-      put("STT",      0x84);
-      put("STX",      0x10);
-      put("SUB",      0x1C);
-      put("SUBF",     0x5C);
-      put("SUBR",     0x94);
-      put("SVC",      0xB0);
-      put("TD",       0xE0);
-      put("TIO",      0xF8);
-      put("TIX",      0x2C);
-      put("TIXR",     0xB8);
-      put("WD",       0xDC);
+  static HashMap<String> directives = new HashMap<String, Integer>();
+  static HashMap<String, Integer> registers = new HashMap<String, Integer>();
+  static HashMap<String, Integer> instructions = new HashMap<String, Integer>();
+  static HashMap<String, Integer> OPTABLE = new HashMap<String, Integer>();
 
-   }};
+  static{
+    //Instructions
+    instructions.put("ADD",      0x18);
+    instructions.put("ADDF",     0x58);
+    instructions.put("ADDR",     0x90);
+    instructions.put("AND",      0x40);
+    instructions.put("CLEAR",    0xB4);
+    instructions.put("COMP",     0x28);
+    instructions.put("COMPF",    0x88);
+    instructions.put("COMPR",    0xA0);
+    instructions.put("DIV",      0x24);
+    instructions.put("DIVF",     0x64);
+    instructions.put("DIVR",     0x9C);
+    instructions.put("FIX",      0xC4);
+    instructions.put("FLOAT",    0xC0);
+    instructions.put("HIO",      0xF4);
+    instructions.put("J",        0x3C);
+    instructions.put("JEQ",      0x30);
+    instructions.put("JGT",      0x34);
+    instructions.put("JLT",      0x38);
+    instructions.put("JSUB",     0x48);
+    instructions.put("LDA",      0x00);
+    instructions.put("LDB",      0x68);
+    instructions.put("LDCH",     0x50);
+    instructions.put("LDF",      0x70);
+    instructions.put("LDL",      0x08);
+    instructions.put("LDS",      0x6C);
+    instructions.put("LDT",      0x74);
+    instructions.put("LDX",      0x04);
+    instructions.put("LPS",      0xD0);
+    instructions.put("MUL",      0x20);
+    instructions.put("MULF",     0x60);
+    instructions.put("MULR",     0x98);
+    instructions.put("NORM",     0xC8);
+    instructions.put("OR",       0x44);
+    instructions.put("RD",       0xD8);
+    instructions.put("RMO",      0xAC);
+    instructions.put("RSUB",     0x4C);
+    instructions.put("SHIFTL",   0xA4);
+    instructions.put("SHIFTR",   0xA8);
+    instructions.put("SIO",      0xF0);
+    instructions.put("SSK",      0xEC);
+    instructions.put("STA",      0x0C);
+    instructions.put("STB",      0x78);
+    instructions.put("STCH",     0x54);
+    instructions.put("STI",      0xD4);
+    instructions.put("STL",      0x14);
+    instructions.put("STS",      0x7C);
+    instructions.put("STSW",     0xE8);
+    instructions.put("STT",      0x84);
+    instructions.put("STX",      0x10);
+    instructions.put("SUB",      0x1C);
+    instructions.put("SUBF",     0x5C);
+    instructions.put("SUBR",     0x94);
+    instructions.put("SVC",      0xB0);
+    instructions.put("TD",       0xE0);
+    instructions.put("TIO",      0xF8);
+    instructions.put("TIX",      0x2C);
+    instructions.put("TIXR",     0xB8);
+    instructions.put("WD",       0xDC);
 
+    //Registers
+    registers.put("A", 0);
+    registers.put("X", 1);
+    registers.put("L", 2);
+    registers.put("S", 4);
+    registers.put("T", 5);
+    registers.put("F", 6);
+    //7 is probably the CC register
+    registers.put("PC", 8);
+    registers.put("SW", 9);
 
-   Enumeration showOpTable;
-   String str;
-
-   showOpTable = OPTABLE.keys();
-
-   while(showOpTable.hasMoreElements()) {
-   str = (String) showOpTable.nextElement();
-   System.out.println(str + ": " + OPTABLE.get(str));
+    //Directives
+    directives.put("START");
+    directives.put("END");
+    directives.put("BASE");
+    directives.put("NOBASE");
+    directives.put("RESB");
+    directives.put("RESW");
+    directives.put("BYTE");
+    directives.put("WORD");
+    directives.put("ORG");
+    directives.put("EXTREF");
+    directives.put("EXTDEF");
+    //Not implemented (Parser will recognize which are and aren't)
+    directives.put("LTORG");
+    directives.put("EQU");
+    directives.put("CSECT");
+    directives.put("USE");
   }
+
 
  }
