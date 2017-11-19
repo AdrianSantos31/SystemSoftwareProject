@@ -46,8 +46,12 @@ public class SicXeAssm{
        //Read all lines
        while(input.hasNextLine()){
          String line = input.nextLine();
-         //stringArrList.add(line);
-         System.out.println(line);
+
+
+         if(!line.startsWith(".") || !line.startsWith(" ")){
+           System.out.println(line);
+         }//end if
+
        }//end while
 
          //Closes the file
