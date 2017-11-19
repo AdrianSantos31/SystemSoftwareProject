@@ -48,9 +48,15 @@ public class SicXeAssm{
          String line = input.nextLine();
 
 
-         if(!line.startsWith(".") || !line.startsWith(" ")){
+         if(!line.startsWith(".")){ //FUTURE WORK: Disregard blank lines
            System.out.println(line);
-         }//end if
+         }
+
+         else if(input.nextLine()) {
+           string = str.replace("\\s","").trim();
+         } //end if
+
+
 
        }//end while
 
@@ -70,13 +76,92 @@ public class SicXeAssm{
   }//end main
 }//end SicXeAssm class
 
+//Format class
 /*
-class Global{
-
-    //Hashmap for the OPTAB
-    public static final Map <String> OPTAB = new HashMap<>();
-
-
-
+enum Format{
+  FORMAT1,
+  FORMAT2R,
+  FORMAT2N,
+  FORMAT2RR,
+  FORMAT2RN,
+  FORMATN34,
+  FORMAT34M
 }
 */
+
+class Global{
+
+  public static final Hashtable<String,Integer> OPTABLE = new Hashtable<String,Integer>() {{
+      put("ADD",      0x18);
+      put("ADDF",     0x58);
+      put("ADDR",     0x90);
+      put("AND",      0x40);
+      put("CLEAR",    0xB4);
+      put("COMP",     0x28);
+      put("COMPF",    0x88);
+      put("COMPR",    0xA0);
+      put("DIV",      0x24);
+      put("DIVF",     0x64);
+      put("DIVR",     0x9C);
+      put("FIX",      0xC4);
+      put("FLOAT",    0xC0);
+      put("HIO",      0xF4);
+      put("J",        0x3C);
+      put("JEQ",      0x30);
+      put("JGT",      0x34);
+      put("JLT",      0x38);
+      put("JSUB",     0x48);
+      put("LDA",      0x00);
+      put("LDB",      0x68);
+      put("LDCH",     0x50);
+      put("LDF",      0x70);
+      put("LDL",      0x08);
+      put("LDS",      0x6C);
+      put("LDT",      0x74);
+      put("LDX",      0x04);
+      put("LPS",      0xD0);
+      put("MUL",      0x20);
+      put("MULF",     0x60);
+      put("MULR",     0x98);
+      put("NORM",     0xC8);
+      put("OR",       0x44);
+      put("RD",       0xD8);
+      put("RMO",      0xAC);
+      put("RSUB",     0x4C);
+      put("SHIFTL",   0xA4);
+      put("SHIFTR",   0xA8);
+      put("SIO",      0xF0);
+      put("SSK",      0xEC);
+      put("STA",      0x0C);
+      put("STB",      0x78);
+      put("STCH",     0x54);
+      put("STI",      0xD4);
+      put("STL",      0x14);
+      put("STS",      0x7C);
+      put("STSW",     0xE8);
+      put("STT",      0x84);
+      put("STX",      0x10);
+      put("SUB",      0x1C);
+      put("SUBF",     0x5C);
+      put("SUBR",     0x94);
+      put("SVC",      0xB0);
+      put("TD",       0xE0);
+      put("TIO",      0xF8);
+      put("TIX",      0x2C);
+      put("TIXR",     0xB8);
+      put("WD",       0xDC);
+
+   }};
+
+
+   Enumeration showOpTable;
+   String str;
+
+   showOpTable = OPTABLE.keys();
+
+   while(showOpTable.hasMoreElements()) {
+   str = (String) showOpTable.nextElement();
+   System.out.println(str + ": " + OPTABLE.get(str));
+  }
+
+ }
